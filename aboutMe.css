@@ -1,0 +1,176 @@
+:root {
+    --mainColor: #284b63;
+    --secondColor: #003049;
+    --offColor: #2a9d8f;
+    --darkColor: #333;
+    --whiteColor: #fff;
+    --buttonColor: #8bfff2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(var(--mainColor), var(--offColor));
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 0.25fr;
+    grid-template-areas: 
+        "main"
+        "foot";
+    width: 75vw;
+    min-height: 150vh;
+    margin: auto;
+}
+
+#clash {
+    position: absolute;
+    left: 50%;
+    bottom: -500px;
+    height:500px;
+    width: 200px;
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) translateZ(-10px);
+}
+
+#overlay{
+    background-color:var(--secondColor);
+    z-index: 2;
+    padding-top: 2em;
+    text-align: center;
+    position: relative;
+}
+
+#overlay p:first-child{
+    padding-bottom: 550px;
+}
+
+#line1{
+    background-color: var(--secondColor);
+    height: 5em;
+    width: 200px;
+    z-index: 2;
+}
+#line2{
+    background-color:var(--whiteColor);
+    height: 4px;
+    width: 200px;
+    transform-style: preserve-3d;
+    margin-bottom: 600px;
+    opacity: 0;
+    position: relative;
+}
+
+.moveLine{
+    animation: lineMove ease-out 2s;
+}
+
+@keyframes lineMove{
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 200px;
+    }
+
+}
+
+.moveClash{
+    animation: clashMove ease-out 6s;
+}
+
+@keyframes clashMove{
+    0%{
+        bottom: 300px;
+    }
+    100%{
+        bottom: -500px;
+    }
+}
+
+.wrapper * {
+    color: var(--whiteColor);
+}
+
+nav {
+    grid-area: navi;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 75vw;
+    height: 5em;
+    background-color: var(--darkColor);
+    z-index: 10;
+}
+
+#nameLogo {
+    display: flex;
+    position: absolute;
+    left: 2em;
+}
+
+#nameLogo * {
+    color: var(--whiteColor);
+    font-size: 1.3em;
+    position: relative;
+}
+
+.nameShort {
+    display: block;
+}
+
+.nameLong {
+    display: none;
+}
+
+button {
+    background-color: var(--darkColor);
+    color: var(--whiteColor);
+    border: none;
+    font-size: 1em;
+    width: 6vw;
+    height: 3em;
+    cursor: pointer;
+    padding: 0;
+}
+
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+}
+
+button:hover {
+    color: var(--buttonColor);
+}
+
+main {
+    grid-area: main;
+    z-index: 9;
+    background-color: var(--secondColor);
+    margin-top:5em ;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    grid-area: foot;
+    z-index: 9;
+    background-color: var(--darkColor);
+    display: flex;
+    justify-content: center;
+}

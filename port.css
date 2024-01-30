@@ -1,0 +1,537 @@
+:root {
+    --mainColor: #284b63;
+    --secondColor: #003049;
+    --offColor: #2a9d8f;
+    --darkColor: #333;
+    --whiteColor: #fff;
+    --buttonColor: #8bfff2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 0.5fr 2fr 0.5fr;
+    grid-template-areas: 
+    "para para para"
+    "head head head"
+    "main imgs imgs"
+    "foot foot foot";
+    width: 100vw;
+    min-height: 100vh;
+    margin: auto;
+}
+
+.wrapper * {
+    color: var(--whiteColor);
+}
+
+p,
+h2 {
+    padding-left: 60px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100vw;
+    height: 5em;
+    background-color: var(--darkColor);
+    z-index: 10;
+}
+
+#nameLogo {
+    display: flex;
+    position: absolute;
+    left: 2em;
+}
+
+#nameLogo * {
+    color: var(--whiteColor);
+    font-size: 1.3em;
+    position: relative;
+}
+
+.nameShort {
+    display: block;
+}
+
+.nameLong {
+    display: none;
+}
+
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100vw;
+}
+
+button {
+    background-color: var(--darkColor);
+    color: var(--whiteColor);
+    border: none;
+    font-size: 1em;
+    width: 6vw;
+    height: 3em;
+    cursor: pointer;
+    padding: 0;
+}
+
+button:hover {
+    color: var(--buttonColor);
+}
+
+.parallax {
+    grid-area: para;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+img {
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+.title {
+    text-align: center;
+}
+
+.parallax h1 {
+    font-size: 8vw;
+    z-index: 3;
+}
+
+#stars,
+#sky {
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+}
+
+#moon,
+#sun {
+    z-index: 2;
+    left: 30px;
+    top: 200px;
+    width: 10vw;
+    height: 10vw;
+}
+
+#galaxy,
+#birds {
+    z-index: 5;
+    top: 200px;
+    right: 25px;
+    width: 25vw;
+    height: 15vw;
+}
+
+#birds {
+    width: 30vw;
+    height: 20vw;
+}
+
+#city,
+#forest {
+    z-index: 4;
+    bottom: 0;
+    width: 100vw;
+    max-height: 100%;
+}
+
+#blackHole {
+    opacity: 0;
+    z-index: 1;
+    width: 75vw;
+    height: 75vw;
+}
+
+.moveBlackHole {
+    animation: blackHole 4s ease-in;
+}
+
+@keyframes blackHole {
+    0% {
+        opacity: 0;
+        rotate: 0deg;
+    }
+
+    50% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+        rotate: 360deg;
+    }
+}
+
+@keyframes meteorCrash1 {
+    0% {
+        opacity: 1;
+        top: 0vh;
+        left: 120vw;
+    }
+
+    100% {
+        top: 100vh;
+        left: 50vw;
+        scale: 300%;
+    }
+}
+
+@keyframes meteorCrash2 {
+    0% {
+        opacity: 1;
+        top: 0vh;
+        left: 120vw;
+    }
+
+    100% {
+        top: 70vh;
+        left: 50vw;
+        scale: 300%;
+    }
+}
+
+.lightFade,
+.darkFade {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 250vh;
+    z-index: 1000;
+}
+
+.lightFade {
+    animation: nuke ease-in-out 4s;
+}
+
+.darkFade {
+    animation: darkNuke ease-in-out 4s;
+}
+
+@keyframes nuke {
+    0% {
+        background-color: rgba(255, 179, 0, 0);
+    }
+
+    50% {
+        background-color: rgba(255, 179, 0, 0.1);
+    }
+
+    100% {
+        background-color: rgba(255, 179, 0, 0.8);
+    }
+}
+
+@keyframes darkNuke {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    100% {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+.dark {
+    opacity: 1;
+}
+
+.dark h1 {
+    color: var(--whiteColor);
+}
+
+.light h1 {
+    color: var(--darkColor);
+}
+
+.light {
+    opacity: 0;
+}
+
+header {
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: head;
+    background-color: var(--secondColor);
+    color: var(--whiteColor);
+    width: 100%;
+    height: 100%;
+}
+
+header * {
+    text-align: center;
+    padding: 0;
+}
+
+#name {
+    text-align: center;
+}
+
+#imgs {
+    grid-area: imgs;
+    z-index: 9;
+    background-color: var(--mainColor);
+    height: 100%;
+    width: 100%;
+}
+
+#photo {
+    height: 50%;
+    display: none;
+}
+
+#project {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding-right: 3em;
+    padding-left: 3em;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9));
+}
+
+.card {
+    border: solid black 2px;
+    width: 5em;
+    height: 20vh;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    cursor: pointer;
+    position: relative;
+    transition: 0.5s ease;
+}
+
+.card img {
+    position: absolute;
+    transition: 0.5s ease;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.card-content {
+    z-index: 10;
+}
+
+.card-content h3 {
+    color: var(--whiteColor);
+}
+
+main {
+    grid-area: main;
+    z-index: 9;
+    background-color: var(--mainColor);
+    height: 100%;
+    width: 101%;
+    padding-top: 2em;
+}
+
+footer {
+    grid-area: foot;
+    z-index: 9;
+    background-color: var(--darkColor);
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 1008px) {
+    .card:hover {
+        flex-grow: 2;
+    }
+
+    .moveMeteor {
+        animation: meteorCrash1 ease-in 4s;
+    }
+
+    #buttons {
+        gap: 2em;
+    }
+
+    .title {
+        padding-bottom: 2em;
+    }
+
+    #meteor {
+        opacity: 0;
+        width: 10vw;
+        height: 8vw;
+        z-index: 3;
+    }
+}
+
+@media (max-width: 1008px) {
+    p,
+    h2 {
+        padding-left: 0px;
+    }
+
+    p {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr, 0.5fr, 0.5fr, 0.5fr, 1fr;
+        grid-template-areas: 
+        "para"
+        "head"
+        "main"
+        "imgs"
+        "foot";
+    }
+
+    nav {
+        width: 100vw;
+        height: 8em;
+    }
+
+    #buttons {
+        justify-content: space-evenly;
+    }
+
+    button {
+        height: 5.2em;
+        width: 4em;
+        font-size: 1.5em
+    }
+
+    #nameLogo {
+        display: none;
+    }
+
+    .parallax {
+        height: 50vh;
+    }
+
+    .title {
+        padding-bottom: 0;
+        padding-top: 200px;
+    }
+
+    #city,
+    #forest {
+        min-width: 100%;
+    }
+
+    #city {
+        min-height: 100%;
+        top: -200px;
+    }
+
+    #forest {
+        min-height: 200%;
+        top: -400px;
+    }
+
+    #stars,
+    #sky {
+        top: 20px;
+        height: 100vh;
+    }
+
+    #meteor {
+        width: 17vw;
+        height: 15vw;
+        opacity: 0;
+        z-index: 3;
+    }
+
+    .moveMeteor {
+        animation: meteorCrash2 ease-in 4s;
+    }
+
+    header {
+        position: relative;
+        top: 5px;
+        height: 200px;
+    }
+
+    main {
+        width: 100vw;
+        height: 101%;
+        text-align: center;
+        padding: 0;
+    }
+
+    #imgs {
+        width: 100vw;
+        height: 100%;
+    }
+
+    #photo {
+        height: auto;
+        display: none;
+    }
+
+    #project {
+        padding-bottom: 2em;
+        padding-left: 2em;
+    }
+
+    footer {
+        height: 20vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .wrapper {
+        height: 300vh;
+    }
+
+    #project {
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        width: 75vw;
+    }
+}
