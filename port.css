@@ -319,11 +319,6 @@ header * {
     width: 100%;
 }
 
-#photo {
-    height: 50%;
-    display: none;
-}
-
 #project {
     display: flex;
     justify-content: center;
