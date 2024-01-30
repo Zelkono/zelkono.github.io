@@ -1,3 +1,7 @@
+document.getElementById("homeButton").addEventListener("click",function(){
+    location.href("index.html");
+})
+
 document.getElementById("clashRoyale").addEventListener("click", function(){
     document.getElementById("line2").classList.add("moveLine");
     document.getElementById("line2").style.opacity = 1;
