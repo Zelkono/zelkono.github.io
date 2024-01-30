@@ -20,10 +20,25 @@ let title = document.querySelector('.title');
 
 let mode = 0;
 
-nameShort.addEventListener("mouseover", mouseoverName);
+document.getElementById("photoButton").addEventListener("click", photoDrop);
+let movePhoto = false;
+function photoDrop(){
+    let photo = document.getElementById("photoImage");
+    if(movePhoto == false){
+        photo.classList.add("movePhoto");
+        photo.style.display = "block";
+        movePhoto = true;
+    }
+    else{
+        photo.classList.remove("movePhoto");
+        movePhoto = false
+        photo.style.display = "none"
+    }
+}
 
 document.getElementById("colorButton").addEventListener("click", colorButton);
 
+nameShort.addEventListener("mouseover", mouseoverName);
 function mouseoverName() {
     nameShort.style.display = "none";
     nameLong.style.display = "block";
@@ -49,6 +64,7 @@ function parallax (){
 function toggleMode(newMode, opacityElement, hideElement, objectElement, fadeElement, fadeAnimation, newAnimation, oldAnimation, gradientColor, color) {
     if (mode !== newMode) {
         objectElement.classList.add(newAnimation);
+        objectElement.style.display = "block";
         if (oldAnimation == true){
             opacityElement.classList.remove(oldAnimation);
         }
@@ -62,13 +78,13 @@ function toggleMode(newMode, opacityElement, hideElement, objectElement, fadeEle
             opacityElement.forEach(el =>{
                 el.style.opacity = 0;
             })
-            objectElement.style.opacity = 0
+            objectElement.style.display = "none"
             hideElement.forEach(el =>{
                 el.style.opacity = 1;
             })
             fadeElement.classList.remove(fadeAnimation);
-            document.querySelectorAll(".image-overlay").forEach(function (gradient) {
-                gradient.style.background = gradientColor;
+            document.querySelectorAll(".image-overlay").forEach(function (el) {
+                el.style.background = gradientColor;
             });
             mode = newMode;
         }, 4000);
@@ -117,7 +133,6 @@ function darkHole() {
 
 function changeColors(darkOrLight) {
     if (darkOrLight == "Mørk") {
-        console.log(darkOrLight);
         document.documentElement.style.setProperty('--whiteColor', '#333');
         document.documentElement.style.setProperty('--darkColor', '#fff');
         document.documentElement.style.setProperty('--mainColor', '#fff3b0');
@@ -126,7 +141,6 @@ function changeColors(darkOrLight) {
         document.documentElement.style.setProperty('--buttonColor', '#fcbf49');
 
     } else {
-        console.log(darkOrLight);
         document.documentElement.style.setProperty('--whiteColor', '#fff');
         document.documentElement.style.setProperty('--darkColor', '#333');
         document.documentElement.style.setProperty('--mainColor', '#284b63');
