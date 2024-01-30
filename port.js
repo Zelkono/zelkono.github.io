@@ -22,7 +22,7 @@ let mode = 0;
 
 document.getElementById("moreButton").addEventListener("click",function(){
     console.log("more");
-    location.href("aboutMe.html");
+    location.href = "aboutMe.html";
 })
 
 document.getElementById("photoButton").addEventListener("click", photoDrop);
