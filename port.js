@@ -6,9 +6,9 @@ let dark = document.querySelectorAll(".dark");
 let light = document.querySelectorAll(".light");
 
 let meteor = document.getElementById("meteor");
-let space = document.getElementById('stars');
-let galaxy = document.getElementById('galaxy');
-let moon = document.getElementById('moon');
+let space = document.getElementById("stars");
+let galaxy = document.getElementById("galaxy");
+let moon = document.getElementById("moon");
 
 let blackHole = document.getElementById("blackHole");
 let birds = document.getElementById("birds");
@@ -16,9 +16,14 @@ let sky = document.getElementById("sky");
 let sun = document.getElementById("sun");
 let forest = document.getElementById("forest");
 
-let title = document.querySelector('.title');
+let title = document.querySelector(".title");
 
 let mode = 0;
+
+document.getElementById("moreButton").addEventListener("click",function(){
+    console.log("more");
+    location.href("aboutMe.html");
+})
 
 document.getElementById("photoButton").addEventListener("click", photoDrop);
 let movePhoto = false;
@@ -44,7 +49,7 @@ function mouseoverName() {
     nameLong.style.display = "block";
 }
 
-window.addEventListener('scroll', parallax);
+window.addEventListener("scroll", parallax);
 function parallax (){
     if (mode == 0){
         space.style.transform = `translateY(${window.scrollY * 0.5}px)`;
@@ -133,19 +138,19 @@ function darkHole() {
 
 function changeColors(darkOrLight) {
     if (darkOrLight == "Mørk") {
-        document.documentElement.style.setProperty('--whiteColor', '#333');
-        document.documentElement.style.setProperty('--darkColor', '#fff');
-        document.documentElement.style.setProperty('--mainColor', '#fff3b0');
-        document.documentElement.style.setProperty('--secondColor', '#e09f3e');
-        document.documentElement.style.setProperty('--offColor', '#ffba08');
-        document.documentElement.style.setProperty('--buttonColor', '#fcbf49');
+        document.documentElement.style.setProperty("--whiteColor", "#333");
+        document.documentElement.style.setProperty("--darkColor", "#fff");
+        document.documentElement.style.setProperty("--mainColor", "#fff3b0");
+        document.documentElement.style.setProperty("--secondColor", "#e09f3e");
+        document.documentElement.style.setProperty("--offColor", "#ffba08");
+        document.documentElement.style.setProperty("--buttonColor", "#fcbf49");
 
     } else {
-        document.documentElement.style.setProperty('--whiteColor', '#fff');
-        document.documentElement.style.setProperty('--darkColor', '#333');
-        document.documentElement.style.setProperty('--mainColor', '#284b63');
-        document.documentElement.style.setProperty('--secondColor', '#003049');
-        document.documentElement.style.setProperty('--offColor', '#2a9d8f');
-        document.documentElement.style.setProperty('--buttonColor', '#8bfff2');
+        document.documentElement.style.setProperty("--whiteColor", "#fff");
+        document.documentElement.style.setProperty("--darkColor", "#333");
+        document.documentElement.style.setProperty("--mainColor", "#284b63");
+        document.documentElement.style.setProperty("--secondColor", "#003049");
+        document.documentElement.style.setProperty("--offColor", "#2a9d8f");
+        document.documentElement.style.setProperty("--buttonColor", "#8bfff2");
     }
 }
