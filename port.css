@@ -51,6 +51,7 @@ nav {
     height: 5em;
     background-color: var(--darkColor);
     z-index: 10;
+    transform-style: preserve-3d;
 }
 
 #nameLogo {
@@ -78,6 +79,7 @@ nav {
     justify-content: flex-end;
     align-items: center;
     width: 100vw;
+    transform-style: preserve-3d;
 }
 
 button {
@@ -93,6 +95,19 @@ button {
 
 button:hover {
     color: var(--buttonColor);
+}
+
+#photoButton{
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+#photoImage{
+    display: none;
+    position: absolute;
+    right:115px ;
+    top: 64px;
+    transform:translateZ(-10px) ;
 }
 
 .parallax {
@@ -372,6 +387,7 @@ footer {
     background-color: var(--darkColor);
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 @media (min-width: 1008px) {
@@ -385,6 +401,22 @@ footer {
 
     #buttons {
         gap: 2em;
+    }
+
+    .movePhoto{
+        animation: movePhoto ease-out 2s;
+    }
+
+    @keyframes movePhoto{
+        0%{
+            top: -300px;
+            right: 115px;
+        }
+
+        100%{
+            top: 64px;
+            right: 115px;
+        }
     }
 
     .title {
@@ -438,6 +470,27 @@ footer {
         height: 5.2em;
         width: 4em;
         font-size: 1.5em
+    }
+
+    #photoImage{
+        top: 125px;
+        right: 125px;
+    }
+       
+    .movePhoto{
+        animation: movePhoto ease-out 2s;
+    }
+
+    @keyframes movePhoto{
+        0%{
+            top: -200px;
+            right: 125px;
+        }
+
+        100%{
+            top: 125px;
+            right: 125px;
+        }
     }
 
     #nameLogo {
@@ -501,11 +554,6 @@ footer {
     #imgs {
         width: 100vw;
         height: 100%;
-    }
-
-    #photo {
-        height: auto;
-        display: none;
     }
 
     #project {
