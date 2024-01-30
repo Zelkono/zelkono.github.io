@@ -1,5 +1,5 @@
 document.getElementById("homeButton").addEventListener("click",function(){
-    location.href("index.html");
+    location.href = "index.html";
 })
 
 document.getElementById("clashRoyale").addEventListener("click", function(){
