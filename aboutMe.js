@@ -16,6 +16,22 @@ function mouseoverName() {
     nameLong.style.display = "block";
 }
 
+document.getElementById("photoButton").addEventListener("click", photoDrop);
+let movePhoto = false;
+function photoDrop(){
+    let photo = document.getElementById("photoImage");
+    if(movePhoto == false){
+        photo.classList.add("movePhoto");
+        photo.style.display = "block";
+        movePhoto = true;
+    }
+    else{
+        photo.classList.remove("movePhoto");
+        movePhoto = false
+        photo.style.display = "none"
+    }
+}
+
 document.getElementById("colorButton").addEventListener("click", changeColors);
 let light = false;
 
