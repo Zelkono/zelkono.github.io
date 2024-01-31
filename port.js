@@ -1,5 +1,3 @@
-let nameShort = document.querySelector(".nameShort");
-let nameLong = document.querySelector(".nameLong");
 let lightFade = document.getElementById("lightFade");
 let darkFade = document.getElementById("darkFade");
 let dark = document.querySelectorAll(".dark");
@@ -20,7 +18,6 @@ let title = document.querySelector(".title");
 
 let mode = 0;
 
-//lenker til nettsider
 document.getElementById("moreButton").addEventListener("click",function(){
     console.log("more");
     location.href = "aboutMe.html";
@@ -59,14 +56,15 @@ function photoDrop(){
 
 document.getElementById("colorButton").addEventListener("click", colorButton);
 
+let nameShort = document.querySelector(".nameShort");
+let nameLong = document.querySelector(".nameLong");
 nameShort.addEventListener("mouseover", mouseoverName);
 function mouseoverName() {
-    console.log("hover");
+    console.log("hover")
     nameShort.style.display = "none";
     nameLong.style.display = "block";
 }
 
-//parallax effekt
 window.addEventListener("scroll", parallax);
 function parallax (){
     if (mode == 0){
@@ -83,7 +81,7 @@ function parallax (){
     }
 };
 
-//Det funker. Gjemmer og viser alle elementer og fordandrer farge
+//If it works, don't fix it
 function toggleMode(newMode, opacityElement, hideElement, objectElement, fadeElement, fadeAnimation, newAnimation, oldAnimation, gradientColor, color) {
     if (mode !== newMode) {
         objectElement.classList.add(newAnimation);
@@ -114,7 +112,6 @@ function toggleMode(newMode, opacityElement, hideElement, objectElement, fadeEle
     }
 }
 
-//skjekker hvilket lysmodus det er på og da kjører animasjon
 function colorButton(){
     let newmode = 1
     if (mode !== newmode){
@@ -155,7 +152,6 @@ function darkHole() {
     );
 }
 
-//root farger
 function changeColors(darkOrLight) {
     if (darkOrLight == "Mørk") {
         document.documentElement.style.setProperty("--whiteColor", "#333");
