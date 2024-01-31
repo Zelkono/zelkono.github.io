@@ -20,6 +20,7 @@ let title = document.querySelector(".title");
 
 let mode = 0;
 
+//lenker til nettsider
 document.getElementById("moreButton").addEventListener("click",function(){
     console.log("more");
     location.href = "aboutMe.html";
@@ -65,6 +66,7 @@ function mouseoverName() {
     nameLong.style.display = "block";
 }
 
+//parallax effekt
 window.addEventListener("scroll", parallax);
 function parallax (){
     if (mode == 0){
@@ -81,7 +83,7 @@ function parallax (){
     }
 };
 
-//If it works, don't fix it
+//Det funker. Gjemmer og viser alle elementer og fordandrer farge
 function toggleMode(newMode, opacityElement, hideElement, objectElement, fadeElement, fadeAnimation, newAnimation, oldAnimation, gradientColor, color) {
     if (mode !== newMode) {
         objectElement.classList.add(newAnimation);
@@ -112,6 +114,7 @@ function toggleMode(newMode, opacityElement, hideElement, objectElement, fadeEle
     }
 }
 
+//skjekker hvilket lysmodus det er på og da kjører animasjon
 function colorButton(){
     let newmode = 1
     if (mode !== newmode){
@@ -152,6 +155,7 @@ function darkHole() {
     );
 }
 
+//root farger
 function changeColors(darkOrLight) {
     if (darkOrLight == "Mørk") {
         document.documentElement.style.setProperty("--whiteColor", "#333");
