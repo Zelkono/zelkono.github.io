@@ -60,6 +60,7 @@ document.getElementById("colorButton").addEventListener("click", colorButton);
 
 nameShort.addEventListener("mouseover", mouseoverName);
 function mouseoverName() {
+    console.log("hover");
     nameShort.style.display = "none";
     nameLong.style.display = "block";
 }
