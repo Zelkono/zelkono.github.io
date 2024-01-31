@@ -118,6 +118,7 @@ nav {
     display: flex;
     position: absolute;
     left: 2em;
+    z-index: 20;
 }
 
 #nameLogo * {
@@ -211,6 +212,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+footer p{
+    padding: 0;
 }
 
 @media (orientation: portrait){
