@@ -1,5 +1,7 @@
 # zelkono.github.io
 
+Dette er min insane crazy portfolio
+
 Black Hole: https://www.pngall.com/black-hole-png/download/129792
 City: https://www.anyrgb.com/en-clipart-ypwma
 Forest: https://no.pinterest.com/pin/350858627207295950/
