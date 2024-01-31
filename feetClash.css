@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    background: linear-gradient(rgb(120, 120, 120), rgb(120, 120, 120));
+    color: black;
+}
+
+
+main {
+    grid-area: main;
+    width: 50vw;
+}
+
+main p{
+    font-size: 1.5em;
+}
+
+button{
+    color: black;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-area: inpu;
+    background-color: rgb(51, 51, 51);
+    border: solid 2px;
+    border-bottom: none;
+    color: lightblue;
+    border-color: lightblue;
+    padding: 1em;
+}
+
+#imageInput{
+    color: lightblue;
+}
+
+#hud{
+    grid-area: sort;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    background-color: rgb(51, 51, 51);
+    border: solid 2px;
+    border-right: none;
+    color: lightblue;
+    border-color: lightblue;
+    padding: 2em;
+}
+
+#sorting{
+    display: flex;
+    flex-direction:column;
+    padding: 1em;
+}
+
+#colorTop,#colorBottom{
+    margin: 1em;
+}
+
+label{
+    color:lightblue;
+}
+
+#container {
+    grid-area: cont;
+    height: 400px;
+    background-color: rgb(51, 51, 51);
+    border: solid 2px;
+    border-top:none;
+    border-color: whitesmoke;
+    color: lightpink;
+    padding: 1em;
+    overflow: auto;
+}
+
+#container :nth-child(even){
+    color: white ;
+}
+
+#container :nth-child(odd){
+    color: lightblue ;
+}
+
+.liste p{
+    margin-bottom: 0.5em;
+}
+
+#imageInput::file-selector-button {
+    color: black;
+}
+
+@media(orientation: landscape){
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr;
+        grid-template-areas: 
+        "logo main main main main adve"
+        ".... main main main main adve"
+        "sort inpu inpu inpu inpu adve"
+        ".... cont cont cont cont ....";
+    }
+           
+    #logo{
+        grid-area: logo;
+    }
+
+    #logo img{
+        width: 10vw;
+        height: 10vw;
+    }
+
+    #ad{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        grid-area: adve;
+    }
+    #ad img{
+        width: 10vw;
+        height: 10vw;
+    }
+}
+
+@media(orientation: portrait){
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(1fr,4);
+        grid-template-areas: 
+        "main"
+        "inpu"
+        "cont"
+        "sort";
+    }
+
+    #container{
+        height: auto;
+    }
+
+    main{
+        width: 80vw;
+    }
+
+    #sorting, #hud :nth-child(2){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #sorting button{
+        width: 8em;
+        height: 3em;
+    }
+
+    #inputs *{
+        height: 3em;
+    }
+    #ad, #ad *{
+        display: none;
+    }
+    #logo, #logo *{
+        display: none;
+    }
+}
