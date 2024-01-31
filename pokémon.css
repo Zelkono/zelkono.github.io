@@ -1,0 +1,683 @@
+*{
+    box-sizing: border-box;
+}
+    body{
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+* p, * button{
+    font-size: 1em;
+}
+
+.wrapper {
+    background-color: gray;
+    display: grid;
+    grid-template-rows: 0.5fr 1.75fr 0.75fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "mons"
+    "scen"
+    "star";
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    background-image: url(PokemonBackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.wrapper.hidden{
+    display: none;
+}
+
+.pokedex{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    border-left: solid red 20em;
+    border-right: solid red 20em;
+    text-align: center;
+}
+.pokedex.show{
+    display: block;
+}
+#main{
+    padding: 2em;
+}
+#entry{
+    display: flex;
+}
+#pokeImage{
+    width: 45%;
+    background-color: lightseagreen;
+    border: solid gray;
+    border-right:none ;
+    padding: 2em;
+}
+#pokeImage img{
+    width: 100%;
+    height: 100%;
+}
+#entryTekst{
+    background-color: rgb(206, 206, 206);
+    border: solid gray;
+    padding: 2em;
+}
+#name{
+    display: flex;
+    padding-top: 2em;
+}
+input{
+    color: black;
+    margin:0;
+    width: 75vw;
+    height: 3em;
+    font-size: x-large;
+    text-align: center ;
+    padding: 0;
+}
+#namePokemon button{
+    padding: 0;
+    background-color: lightseagreen;
+    height: 4.5em;
+    width: 10em;
+    display: inline-block;
+}
+#output{
+    width: 25vw;
+    background-color: lightseagreen;
+    margin: auto;
+    padding: 1em;
+    font-size: larger;
+    margin-top: 2em;
+    border: solid whitesmoke 2px;
+}
+
+.evolution{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(evolution.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.evolution.show{
+    display: block;
+}
+#evoEffectCont.animation{
+    animation: evolutionAnimation 1s linear 4;
+}
+#evoEffectCont{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 2;
+}
+
+@keyframes evolutionAnimation{
+    0%{
+        background-color: transparent;
+    }
+    50%{
+        background-color: white;
+    }
+}
+#whatEvo,#nowayEvo{
+    background-color: black;
+    color: whitesmoke;
+    width: 100vw;
+    border: solid whitesmoke 5px;
+    margin: 0;
+    padding: 0;
+}
+#whatEvo{
+    display: block;
+}
+#nowayEvo{
+    display: none;
+}
+#barbarianKing img{
+    top: 40%;
+    left: 40%;
+    position: absolute;
+    height: 35%;
+    width: 20%;
+}
+#barbarian img{
+    display: block;
+    top: 45%;
+    left: 40%;
+    position: absolute;
+    height: 35%;
+    width: 20%;
+    z-index: 1;
+}
+
+button {
+    width: 25vw;
+    margin: auto;
+    background-color: gray;
+}
+
+.monsters {
+    width: 100vw;
+    background-image:url(grayBackground.jpg) ;
+    background-repeat:no-repeat;
+    background-size: cover;
+    border: solid whitesmoke 0.5em;
+    grid-area: mons;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    color: whitesmoke;
+}
+
+.monsters h1{
+    margin: 0;
+}
+
+.monsters h2{
+    padding: 0 2em 0 2em;
+    margin: 0;
+}
+
+.events{
+    display: flex;
+}
+
+.scene {
+    grid-area: scen;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "myhp enhp"
+    "mypo enem";
+    margin: auto;
+    
+}
+
+#myPokémon img,
+#enemyPokémon img{
+    aspect-ratio: 1/1;
+    width: 15vw;
+}
+#capture img{
+    width: 2vw;
+    margin-left: 6em;
+    margin-top: 8em;
+}
+.scene p {
+    margin: auto;
+    margin-bottom: 1em !important;
+    background-color: gray;
+    border: solid black 2px;
+    color: whitesmoke;
+    width: 5em;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+#myPokémon {
+    grid-area: mypo;
+}
+
+#myPokémon.hidden, #enemyPokémon.hidden,#enemyHP.hidden,#myHP.hidden{
+    display: none;
+}
+
+#myHP {
+    grid-area: myhp;
+}
+
+.enemy {
+    grid-area: enem;
+    position: relative;
+}
+
+#capture{
+    display: none;
+}
+
+#capture.show{
+    display: block;
+}
+
+#enemyHP {
+    grid-area: enhp;
+}
+
+#solarbeamCircle{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    background-color: yellow;
+    border-radius: 50%;
+    display: none;
+}
+#solarbeamCircle.show{
+    display: block;
+}
+
+#solarbeamBeam{
+    left: -7.1em;
+    position: absolute;
+    top: 30%;
+    width: 150px;
+    height: 25px;
+    background-color: lightgreen;
+    display: none;
+    transform: rotate(315deg);
+}
+#solarbeamBeam.show{
+    display:block;
+}
+#flareBlitz{
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    top: 30%;
+}
+#flareBlitz img{
+    position: relative;
+    left: 40%;
+    width: 100px;
+    height: 75px;
+}
+#flareBlitz.enemyAnimate1{
+    display: block;
+    animation: flareBlitzAnimation 1s linear;
+}
+@keyframes flareBlitzAnimation {
+    0% {
+        left: 40%;
+    }
+    50% {
+        left: 20%;
+    }
+    100% {
+        left: -20%;
+    }
+}
+
+#fangsUpper{
+    display: none;
+    position: absolute;
+    left: -75%;
+    top: 0%;
+    width: 100px;
+    height: 100px;
+}
+#fangsUpper.enemyAnimate2{
+    display: block;
+    animation: fangsUpperAnimation 1s linear;
+}
+@keyframes fangsUpperAnimation {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 10%;
+    }
+    100% {
+        top: 30%;
+    }
+}
+#fangsLower{
+    display: none;
+    position: absolute;
+    top: 70%;
+    left: -75%;
+    width: 100px;
+    height: 100px;
+}
+#fangsLower.enemyAnimate2{
+    display: block;
+    animation: fangsLowerAnimation 1s linear;
+}
+@keyframes fangsLowerAnimation {
+    0% {
+        top: 60%;
+    }
+    50% {
+        top: 50%;
+    }
+    100% {
+        top: 30%;
+    }
+}
+
+.enemy.enemyAnimate3{
+    animation: tackleAnimation 1s linear;
+}
+@keyframes tackleAnimation {
+    0% {
+        top: 0%;
+        left: 0%;
+    }
+    25%{
+        top: -30%;
+        left: -20%;
+    }
+    50% {
+        top: -20%;
+        left: -40%;
+    }
+    75%{
+        top: -10%;
+        left: -60%;
+    }
+    100% {
+        top: 0%;
+        left: -80%;
+    }
+}
+
+.highSlash {
+    display: none;
+    z-index: 2;
+    position: absolute;
+    left: 45%;
+    top: 40%;
+    width: 25px;
+    height: 150px;
+    transform-origin: bottom center;
+}
+@keyframes swingAnimation {
+    0% {
+        transform: rotate(45deg);
+    }
+    50% {
+        transform: rotate(50deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+}
+.animate1 {
+    display: block;
+    animation: swingAnimation 1s linear;
+}
+
+#pole {
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+#tip {
+    position: absolute;
+    left: -4%; 
+    top: -12%;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 20px solid whitesmoke;
+    transform-origin: top center;
+}
+
+#shield{
+    transform-origin: center;
+    position: absolute;
+    background-color: rgba(200,200,200,0.7);
+    border-radius: 50% ;
+    width: 0px;
+    height: 0px;
+    top:58%;
+    left: 42%;
+}
+.animate4 {
+    animation: shieldAnimation 1s linear;
+}
+@keyframes shieldAnimation {
+    0% {
+        width: 0;
+        height: 0;
+        transform: translate(-50%, -50%);
+    }
+    50% {
+        width: 100px;
+        height: 100px;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        width: 200px;
+        height: 200px;
+        transform: translate(-50%, -50%);
+    }
+}
+
+#impact{
+    display: none;
+    height: 15%;
+    width: 15%;
+    top: 55%;
+    left: 30%;
+    position: absolute;
+    z-index: 2;
+}
+#impact.animate3{
+    display: block;
+    animation: impactAnimation 1s linear;
+}
+@keyframes impactAnimation {
+    0% {
+        left: 30%;
+    }
+    50% {
+        left: 35%;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+.cross{
+    width: 150px;
+    position: absolute;
+    left: 37%;
+    top:50%;
+    display: none;
+}
+.cross img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+#cross1 {
+    left: 90%;
+    top: 50%;
+}
+#cross2 {
+    left: 15%;
+    top: 51%;
+}
+#cross3 {
+    left: 43%;
+    top: 55%;
+}
+#cross4 {
+    left: 20%;
+    top: 60%;
+}
+#cross5 {
+    left: 50%;
+    top: 65%;
+}
+#cross6 {
+    left: 85%;
+    top: 66%;
+}
+#cross7 {
+    left: 10%;
+    top: 68%;
+}
+#cross8 {
+    left: 41%;
+    top: 62%;
+}
+.cross.animate1 {
+    animation: crossAnimation 1s linear;
+    display: block;
+}
+
+@keyframes crossAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.start {
+    border: solid rgb(37, 37, 78) 0.5em;
+    grid-area: star;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "item figh";
+}
+
+.items,
+.fight,
+.start {
+    background-image: url(grayBackground.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.items {
+    border: solid rgb(198, 189, 81) 0.5em;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "heal baci"
+    "ball ...."
+}
+
+#pokeball{
+    grid-area: ball;
+    height: 3em;
+}
+
+#backItems{
+    grid-area: baci;
+    height: 3em;
+}
+
+#heal{
+    grid-area: heal;
+    height: 3em;
+}
+.items button{
+    background-color: gray;
+    width: 25vw;
+    margin: auto;
+    height: 3em;
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+    position: relative;
+}
+
+.fight {
+    border: solid darkred 0.5em;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "att1 att2"
+    "att3 att4"
+    "text bacf"
+    ;
+}
+
+.fight * {
+    background-color: gray;
+    width: 25vw;
+    margin: auto;
+    height: 2em;
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+    position: relative;
+}
+
+#attack1 {
+    grid-area: att1;
+}
+
+#attack2 {
+    grid-area: att2;
+}
+
+#attack3 {
+    grid-area: att3;
+}
+
+#attack4 {
+    grid-area: att4;
+}
+
+#backFight {
+    grid-area: bacf;
+}
+
+#itemsButton {
+    height: 5em;
+    grid-area: item;
+    border: solid rgb(198, 189, 81) 2px;
+}
+
+#fightButton {
+    height: 5em;
+    grid-area: figh;
+    border: solid darkred 2px;
+}
+
+.text-box {
+    grid-area: text;
+    padding: 10px;
+    border: 1px solid #ccc;
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+#textBox1, #textBox2, #textBox3, #textBox4, #textBox5, #textBox6 {
+    display: none;
+    background-color: gray;
+    width: 25vw;
+    margin: auto;
+    height: 4.5em;
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+    position: relative;
+}
+
+#attack1:hover + #textBox1,
+#attack2:hover + #textBox2,
+#attack3:hover + #textBox3,
+#attack4:hover + #textBox4,
+#heal:hover + #textBox5,
+#pokeball:hover + #textBox6 {
+    width: 20vw !important;
+    display: block;
+    position: absolute;
+    top: 84%;
+    left: 51%;
+    transform: translateX(-55%);
+    z-index: 2;
+}
