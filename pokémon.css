@@ -23,7 +23,7 @@
     width: 100vw;
     height: 100vh;
     margin: auto;
-    background-image: url(/BilderOgVideo/PokemonBackground.png);
+    background-image: url(/PokemonBackground.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -99,7 +99,7 @@ input{
     display: none;
     height: 100vh;
     width: 100vw;
-    background-image: url(/BilderOgVideo/evolution.png);
+    background-image: url(/evolution.png);
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
@@ -164,7 +164,7 @@ button {
 
 .monsters {
     width: 100vw;
-    background-image:url(/BilderOgVideo/grayBackground.jpg) ;
+    background-image:url(/grayBackground.jpg) ;
     background-repeat:no-repeat;
     background-size: cover;
     border: solid whitesmoke 0.5em;
@@ -551,7 +551,7 @@ button {
 .items,
 .fight,
 .start {
-    background-image: url(/BilderOgVideo/grayBackground.jpg);
+    background-image: url(/grayBackground.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
