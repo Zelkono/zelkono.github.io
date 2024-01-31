@@ -386,6 +386,10 @@ footer {
     align-items: center;
 }
 
+footer p{
+    padding: 0;
+}
+
 @media (min-width: 1008px) {
     .card:hover {
         flex-grow: 2;
