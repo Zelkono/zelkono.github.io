@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Battle</title>
+    <link rel="stylesheet" href="pokémon.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="monsters">
+            <div>
+            <h1>Barbarian VS Darmanitan</h1>
+            </div>
+            <div class="events">
+            <h2 id="myEvent">You encountered a Darmanitan</h2>
+            <h2 id="enemyEvent">The battle has begun </h2>
+            </div>
+        </div>
+
+        <div class="scene">
+            <p id="myHP">235</p>
+            <div class="highSlash">
+                <div id="pole"></div>
+                <div id="tip"></div>
+            </div>
+            <div id="shield"></div>
+            <div><img src="/gigaImpact.png" id="impact" alt="gigaImpact"></div>
+
+            <div class="cross">
+                <div><img src="/cross.png" alt="cross" id="cross1"></div>
+                <div><img src="/cross.png" alt="cross" id="cross2"></div>
+                <div><img src="/cross.png" alt="cross" id="cross3"></div>
+                <div><img src="/cross.png" alt="cross" id="cross4"></div>
+                <div><img src="/cross.png" alt="cross" id="cross5"></div>
+                <div><img src="/cross.png" alt="cross" id="cross6"></div>
+                <div><img src="/cross.png" alt="cross" id="cross7"></div>
+                <div><img src="/cross.png" alt="cross" id="cross8"></div>
+            </div>
+         
+            <div id="myPokémon"> <img src="/Barbarian.png" alt="myPokémon"></div>
+
+            <p id="enemyHP">350</p>
+
+            <div class="enemy">
+                <div id="solarbeamCircle"></div>
+                <div id="solarbeamBeam"></div>
+                <div><img src="/flareBlitz.png" alt="flareBlitz" id="flareBlitz"></div>
+                <div class="fangs">
+                    <div><img src="/fangsUpper.png"  id="fangsUpper" alt="fangsUpper"></div>
+                    <div><img src="/fangsLower.png" id="fangsLower" alt="fangsLower"></div>
+                </div>
+                <div id="enemyPokémon"> <img src="/Darmanitan.png" alt="Enemy"></div>
+                <div id="capture"> <img src="/pokeball.png" alt="Pokeball"></div>
+            </div>
+        </div>
+
+        <div class="start">
+            <button id="fightButton">Fight</button>
+            <button id="itemsButton">Items</button>
+        </div>
+
+        <div class="fight">
+            <button id="attack1">Recover</button>
+            <div class="text-box" id="textBox1">Take a rest and gather yourself.<br>Chance of hit: 60%<br>Effect: Heals 70 HP</div>
+        
+            <button id="attack2">Slash</button>
+            <div class="text-box" id="textBox2">Swing your big sword.<br>Chance of hit: 90%<br>Effect: Deals 70 damage to the enemy</div>
+        
+            <button id="attack3">Giga Impact</button>
+            <div class="text-box" id="textBox3">Launch your body with lethal force.<br>Chance of hit: 50%<br>Effect: Deals 110 damage to the enemy</div>
+        
+            <button id="attack4">Protect</button>
+            <div class="text-box" id="textBox4">Guard yourself against enemy attacks.<br>Chance of hit: 60%<br>Effect: Block all incoming damage</div>
+        
+            <button class="back-button" id="backFight">Back</button>
+        </div>
+
+        <div class="items">
+            <button id="heal">Heal</button>
+            <p class="text-box" id="textBox5">Heavenly heals from above<br>Effect: Heals 100 HP</p>
+            <button id="pokeball">Pokéball</button>
+            <p class="text-box" id="textBox6">Gotta catch them all<br>Chance: 10%</p>   
+            <button id="backItems">Back</button>
+        </div>
+    </div>
+    <div class="pokedex">
+        <div id="main">
+            <h1>Congratulations</h1>
+            <h1>Darmanitan has been captured</h1>
+            <div id="entry">
+                <div id="pokeImage"><img src="/Darmanitan.png" alt="Darmanitan"></div>
+                <div id="entryTekst">
+                    <h2>Its internal fire burns at 2,500 degrees Fahrenheit, making enough power that it can destroy a dump truck with one punch.</h2>
+                </div>
+            </div>
+            <div id="name"> <input type="text" id="input" placeholder="What do you want to name Darmanitan?">
+            <div id="namePokemon">
+                <button>Name pokémon</button>
+            </div>
+            </div>
+            <div id="output"></div>
+
+        </div>
+    </div>
+    <div class="evolution">
+        <div id="behind">
+            <div id="whatEvo"><h1>What?? Barbarian is evolving!</h1></div>
+            <div id="nowayEvo"><h1>Barbarian has evolved into Barbarian King!</h1></div>
+            <div id="evoPoint">
+                <div id="barbarianKing" style="display: none;"><img src="/barbarianKing.webp" alt="barbarianKing"></div>
+                <div id="barbarian"><img src="/Barbarian.png" alt="barbarian"></div>
+            </div>
+        </div>
+        <div id="evoEffectCont"></div>
+    </div>
+    
+</body>
+
+<script src="pokémon.js"></script>
+</html>
