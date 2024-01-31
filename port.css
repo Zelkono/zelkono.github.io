@@ -401,6 +401,7 @@ footer p{
 
     #buttons {
         gap: 2em;
+        padding-right:2em;
     }
 
     .movePhoto{
