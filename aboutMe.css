@@ -218,6 +218,12 @@ footer p{
     padding: 0;
 }
 
+@media (max-width:748px){
+    #nameLogo{
+        display: none;
+    }
+}
+
 @media (orientation: portrait){
     .wrapper{
         width: 100vw;
