@@ -105,7 +105,6 @@ body::-webkit-scrollbar {
 nav {
     grid-area: navi;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: fixed;
     width: 75vw;
@@ -149,7 +148,6 @@ button {
 #buttons {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     width: 100%;
     gap: 2em;
     padding-right: 2em;
@@ -203,6 +201,7 @@ main {
 p {
     padding-left: 10vw;
     padding-right: 10vw;
+    font-size: larger;
 }
 
 footer {
@@ -215,17 +214,24 @@ footer {
 }
 
 @media (orientation: portrait){
+    .wrapper{
+        width: 100vw;
+    }
+
+    nav{
+        width: 100vw;
+    }
+
     #nameLogo{
         display: none;
     }
 
     #buttons{
-        justify-content: center;
+        justify-content: space-around;
         padding: 0;
     }
 
     p{
         font-size: larger;
-        
     }
 }
