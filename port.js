@@ -25,6 +25,21 @@ document.getElementById("moreButton").addEventListener("click",function(){
     location.href = "aboutMe.html";
 })
 
+document.getElementById("card1").addEventListener("click",function(){
+    console.log("more");
+    location.href = "rgb.html";
+})
+
+document.getElementById("card2").addEventListener("click",function(){
+    console.log("more");
+    location.href = "pokémon.html";
+})
+
+document.getElementById("card3").addEventListener("click",function(){
+    console.log("more");
+    location.href = "feetClash.html";
+})
+
 document.getElementById("photoButton").addEventListener("click", photoDrop);
 let movePhoto = false;
 function photoDrop(){
