@@ -58,6 +58,7 @@ nav {
     display: flex;
     position: absolute;
     left: 2em;
+    z-index: 20;
 }
 
 #nameLogo * {
