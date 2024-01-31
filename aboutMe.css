@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
         "main"
         "foot";
     width: 75vw;
-    min-height: 150vh;
+    min-height: 100vh;
     margin: auto;
 }
 
